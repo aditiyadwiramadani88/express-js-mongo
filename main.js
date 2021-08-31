@@ -8,8 +8,15 @@ app.use(bodyParser.json())
 const mongoose = require('mongoose');
 const { response } = require('express');
 mongoose.connect('mongodb://localhost:27017/app_todo', {useNewUrlParser: true, useUnifiedTopology: true});
-
+app.use('/static', express.static('static'))
 const Todo= mongoose.model('todo', { list: String });
+
+
+
+app.get('/index', (req,res) => { 
+
+    res.sendfile('index.html')
+})
 
 
 app.post('/', async(req, res) => { 
@@ -39,10 +46,7 @@ app.get('/', async(req, res) => {
     res.json(data)    
 })
 
-
-
 app.delete('/:id', async(req , res) => { 
-
 
     // chexk id
     if(!req.params.id)  { 
@@ -51,7 +55,7 @@ app.delete('/:id', async(req , res) => {
 
     // delete data
     const del = await Todo.deleteOne({"_id": req.params.id})
-    res.json({"status": "success delete data"})
+    res.json({"sucess": "success delete data"})
 
 
 })
@@ -73,6 +77,7 @@ app.put('/:id', async(req, res) => {
         if(!required.test(req.body.list)) { 
             // updating
             const upd = await Todo.updateOne({"_id": req.params.id}, {"list": req.body.list})
+            
             console.log(upd)
             res.json({"status": "sucess update"})
 
