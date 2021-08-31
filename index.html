@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+
+  <div class="container">
+
+    <div class="mt-4 mb-4">
+
+      <h1>Todo List</h1>
+    </div>
+
+    <div class="d-flex justify-content-end m-lg-4">
+      <button class="btn btn-outline-info create"  data-bs-toggle="modal" data-bs-target="#exampleModal">Add Task</button>
+
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Task Name</th>
+          <th scope="col">Remove</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody class="t-body">
+
+      </tbody>
+    </table>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Add Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" class="create" id="edit-form">
+      <div class="modal-body">
+        <label for="exampleFormControlInput1" class="form-label text-center">List</label>
+        <input type="text" class="form-control list" name="list"  id="exampleFormControlInput1">
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark b-close" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-outline-info">Save</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+   
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="/static/main.js"></script>
+</body>
+</html>
